@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Data Recording/Multitasking App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Recording & Multitasking App</h1>
+
+        <!-- Data Recording Section -->
+        <section id="data-recording">
+            <h2>Data Recording</h2>
+            <form id="dataForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required><br>
+                
+                <label for="lastDrink">Last Drink:</label>
+                <input type="text" id="lastDrink" name="lastDrink" required><br>
+                
+                <label for="lastEatenPlace">Last Eaten Place:</label>
+                <input type="text" id="lastEatenPlace" name="lastEatenPlace" required><br>
+                
+                <label for="favoriteRestaurant">Favorite Restaurant:</label>
+                <input type="text" id="favoriteRestaurant" name="favoriteRestaurant" required><br>
+                
+                <label for="favoriteBeerBrand">Favorite Beer Brand:</label>
+                <input type="text" id="favoriteBeerBrand" name="favoriteBeerBrand" required><br>
+                
+                <label for="preference">Preference:</label>
+                <select id="preference" name="preference" required>
+                    <option value="restaurant">Restaurant</option>
+                    <option value="takeout">Take-Out</option>
+                    <option value="delivery">Delivery</option>
+                </select><br>
+                
+                <button type="button" onclick="addData()">Add Data</button>
+                <button type="button" onclick="downloadData()">Download Data</button>
+            </form>
+            
+            <h3>Recorded Data</h3>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Last Drink</th>
+                        <th>Last Eaten Place</th>
+                        <th>Favorite Restaurant</th>
+                        <th>Favorite Beer Brand</th>
+                        <th>Preference</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Multitasking Section -->
+        <section id="multitasking">
+            <h2>Multitasking</h2>
+            
+            <!-- Radio Player -->
+            <div id="radio">
+                <h3>Radio</h3>
+                <audio controls>
+                    <source src="your-radio-url-here" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            
+            <!-- Note-taking Feature -->
+            <div id="notes">
+                <h3>Notes</h3>
+                <textarea id="noteInput" rows="5" cols="30" placeholder="Take your notes here..."></textarea><br>
+                <button type="button" onclick="addNote()">Add Note</button>
+                <button type="button" onclick="clearNotes()">Clear Notes</button>
+                <div id="noteList"></div>
+            </div>
+            
+            <!-- Calculator -->
+            <div id="calculator">
+                <h3>Calculator</h3>
+                <input type="text" id="calcDisplay" disabled>
+                <div id="calcButtons">
+                    <button onclick="inputCalc('7')">7</button>
+                    <button onclick="inputCalc('8')">8</button>
+                    <button onclick="inputCalc('9')">9</button>
+                    <button onclick="inputCalc('/')">/</button>
+                    <button onclick="inputCalc('4')">4</button>
+                    <button onclick="inputCalc('5')">5</button>
+                    <button onclick="inputCalc('6')">6</button>
+                    <button onclick="inputCalc('*')">*</button>
+                    <button onclick="inputCalc('1')">1</button>
+                    <button onclick="inputCalc('2')">2</button>
+                    <button onclick="inputCalc('3')">3</button>
+                    <button onclick="inputCalc('-')">-</button>
+                    <button onclick="inputCalc('0')">0</button>
+                    <button onclick="inputCalc('.')">.</button>
+                    <button onclick="calculate()">=</button>
+                    <button onclick="inputCalc('+')">+</button>
+                    <button onclick="clearCalc()">C</button>
+                </div>
+            </div>
+            
+            <!-- Image and Video Gallery -->
+            <div id="gallery">
+                <h3>Image and Video Gallery</h3>
+                <input type="file" id="mediaInput" accept="image/*,video/*"><br>
+                <button type="button" onclick="addMedia()">Add Media</button>
+                <div id="mediaGallery"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
